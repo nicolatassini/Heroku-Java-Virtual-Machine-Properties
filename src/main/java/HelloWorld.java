@@ -15,15 +15,17 @@ public class HelloWorld extends HttpServlet {
 		resp.getWriter().print("<head>");
 		resp.getWriter().print("<title>"+title+"</title><body>");
 		resp.getWriter().print("<style type=\"text/css\">"
-		  +"body { color: #FF6C00; }"
-		  +"</style>");
+			+"body { color: #FF6C00; }"
+			+"#tquilalink { position: absolute; top: 10px; right: 10px; }"
+			+"#linkme { color: #FF6C00; }"
+			+"</style>");
 		resp.getWriter().print("</head>");
 		resp.getWriter().print("<body>");
 		
         resp.getWriter().print("<h1>"+title+"</h1>");
-		resp.getWriter().print("<h4><a href=\"mailto:nicola@tquila.com\">Write me for any comment or request!</a></h4>");
+		resp.getWriter().print("<h4><a class=\"linkme\" href=\"mailto:nicola@tquila.com\">Write me for any comment or request!</a></h4>");
 		
-		resp.getWriter().print("<a id=\"tquilalink\" href=\"www.tquila.com\" target=\"_blank\"><img id=\"tquilaimg\" href=\"http://www.tquila.com/tquila-logo.png\"/></a>");
+		resp.getWriter().print("<a id=\"tquilalink\" href=\"www.tquila.com\" target=\"_blank\"><img id=\"tquilaimg\" src=\"http://www.tquila.com/tquila-logo.png\"/></a>");
 		
 		resp.getWriter().print("<br/><table>");
 		Properties properties = System.getProperties();
