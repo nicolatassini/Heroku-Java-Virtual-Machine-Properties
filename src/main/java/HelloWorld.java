@@ -3,13 +3,23 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.*;
+import java.util.*;
 
 public class HelloWorld extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        resp.getWriter().print("Hello from Java!\n");
+        resp.getWriter().print("<h1>Heroku on Java properties:</h1>");
+		
+		resp.getWriter().print("<br/><table>");
+		Properties properties = System.getProperties();
+		for(String parameterName : Collections.list((Enumeration<String>)properties.propertyNames())) {
+			resp.getWriter().print("<tr><td>"+parameterName+"</td><td>"+properties.getProperty(parameterName)+"</td></tr>");
+		}
+		resp.getWriter().print("</table>");
+		
+        resp.getWriter().print("");
     }
 
     public static void main(String[] args) throws Exception{
