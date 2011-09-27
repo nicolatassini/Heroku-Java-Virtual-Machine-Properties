@@ -23,7 +23,7 @@ public class HelloWorld extends HttpServlet {
 		resp.getWriter().print("<body>");
 		
         resp.getWriter().print("<h1>"+title+"</h1>");
-		resp.getWriter().print("<h4><a class=\"linkme\" href=\"mailto:nicola@tquila.com\">Write me for any comment or request!</a></h4>");
+		resp.getWriter().print("<h4><a class=\"linkme\" href=\"mailto:nicola@tquila.com\">Write us for any comment or request!</a></h4>");
 		
 		resp.getWriter().print("<a id=\"tquilalink\" href=\"www.tquila.com\" target=\"_blank\"><img id=\"tquilaimg\" src=\"http://www.tquila.com/tquila-logo.png\"/></a>");
 		
