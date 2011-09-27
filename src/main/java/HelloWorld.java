@@ -14,6 +14,9 @@ public class HelloWorld extends HttpServlet {
 		resp.getWriter().print("<html>");
 		resp.getWriter().print("<head>");
 		resp.getWriter().print("<title>"+title+"</title><body>");
+		resp.getWriter().print("<style type=\"text/css\">"
+		  +"body { color: #FF6C00; }"
+		  +"</style>");
 		resp.getWriter().print("</head>");
 		resp.getWriter().print("<body>");
 		
