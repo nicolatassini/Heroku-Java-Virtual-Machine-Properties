@@ -11,8 +11,16 @@ public class HelloWorld extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 		String title = "Heroku on Java: JVM properties";
-		resp.getWriter().print("<html><title>"+title+"</title><body>");
+		resp.getWriter().print("<html>");
+		resp.getWriter().print("<head>");
+		resp.getWriter().print("<title>"+title+"</title><body>");
+		resp.getWriter().print("</head>");
+		resp.getWriter().print("<body>");
+		
         resp.getWriter().print("<h1>"+title+"</h1>");
+		resp.getWriter().print("<h4><a href=\"mailto:nicola@tquila.com\">Write me for any comment or request!</a></h4>");
+		
+		resp.getWriter().print("<a id=\"tquilalink\" href=\"www.tquila.com\" target=\"_blank\"><img id=\"tquilaimg\" href=\"http://www.tquila.com/tquila-logo.png\"/></a>");
 		
 		resp.getWriter().print("<br/><table>");
 		Properties properties = System.getProperties();
