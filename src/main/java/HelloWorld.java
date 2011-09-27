@@ -55,12 +55,12 @@ public class HelloWorld extends HttpServlet {
     }
 
 	private String getMeta() {
-		return "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8″\" />
-		<meta http-equiv=\"Cache Control\" content=\"no-cache\"/>
-		<meta name=\"content-language\" content=\"en\"/>
-		<meta name=\"author\" content=\"Nicola Tassini\"/>
-		<meta name=\"keywords\" content=\"heroku, java, system, properties, jvm, version, paas\"/>
-		<meta name=\"description\" content=\"Display all the system properties of Java JVM on Heroku platform\"/>
-		<meta name=\"ROBOTS\" content=\"all\"/>";
+		return "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8″\" />"
+		+"<meta http-equiv=\"Cache Control\" content=\"no-cache\"/>"
+		+"<meta name=\"content-language\" content=\"en\"/>"
+		+"<meta name=\"author\" content=\"Nicola Tassini\"/>"
+		+"<meta name=\"keywords\" content=\"heroku, java, system, properties, jvm, version, paas\"/>"
+		+"<meta name=\"description\" content=\"Display all the system properties of Java JVM on Heroku platform\"/>"
+		+"<meta name=\"ROBOTS\" content=\"all\"/>";
 	}
 }
