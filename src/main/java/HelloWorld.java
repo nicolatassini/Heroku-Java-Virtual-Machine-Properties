@@ -15,6 +15,9 @@ public class HelloWorld extends HttpServlet {
 		String title = "Heroku on Java: JVM properties";
 		resp.getWriter().print("<html>");
 		resp.getWriter().print("<head>");
+		
+		resp.getWriter().print(getMeta());
+		
 		resp.getWriter().print("<title>"+title+"</title><body>");
 		resp.getWriter().print("<style type=\"text/css\">"
 			+"body { color: #FF6C00; }"
@@ -50,4 +53,14 @@ public class HelloWorld extends HttpServlet {
         server.start();
         server.join();   
     }
+
+	private String getMeta() {
+		return "<meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
+		<meta http-equiv=”Cache Control” content=”no-cache”/>
+		<meta name=”content-language” content=”en”/>
+		<meta name=”author” content=”Nicola Tassini”/>
+		<meta name=”keywords” content=”heroku, java, system, properties, jvm, version, paas”/>
+		<meta name=”description” content=”Display all the system properties of Java JVM on Heroku platform ”/>
+		<meta name=”ROBOTS” content=”all”/>";
+	}
 }
