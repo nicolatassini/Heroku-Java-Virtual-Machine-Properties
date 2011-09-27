@@ -10,7 +10,9 @@ public class HelloWorld extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        resp.getWriter().print("<h1>Heroku on Java properties:</h1>");
+		String title = "Heroku on Java: JVM properties";
+		resp.getWriter().print("<html><title>"+title+"</title><body>");
+        resp.getWriter().print("<h1>"+title+"</h1>");
 		
 		resp.getWriter().print("<br/><table>");
 		Properties properties = System.getProperties();
@@ -18,6 +20,8 @@ public class HelloWorld extends HttpServlet {
 			resp.getWriter().print("<tr><td>"+parameterName+"</td><td>"+properties.getProperty(parameterName)+"</td></tr>");
 		}
 		resp.getWriter().print("</table>");
+		resp.getWriter().print("</body>");
+		resp.getWriter().print("</html>");
 		
         resp.getWriter().print("");
     }
