@@ -55,7 +55,7 @@ public class HelloWorld extends HttpServlet {
     }
 
 	private String getMeta() {
-		return "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8″\" />"
+		return "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8;\" />"
 		+"<meta http-equiv=\"Cache Control\" content=\"no-cache\"/>"
 		+"<meta name=\"content-language\" content=\"en\"/>"
 		+"<meta name=\"author\" content=\"Nicola Tassini\"/>"
