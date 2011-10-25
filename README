@@ -1,1 +1,4 @@
 Display all the JVM properties in one single page: useful for Heroku instances
+
+Live at: http://javaproperties.herokuapp.com/
+
