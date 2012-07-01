@@ -46,8 +46,10 @@ public class JVMPropertiesCtrl extends HttpServlet {
         Server server = new Server(Integer.valueOf(System.getenv("PORT")));
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
+        
         server.setHandler(context);
-        context.addServlet(new ServletHolder(new HelloWorld()),"/*");
+        context.addServlet(new ServletHolder(new JVMPropertiesCtrl()),"/*");
+        
         server.start();
         server.join();   
     }
