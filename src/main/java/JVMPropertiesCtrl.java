@@ -5,40 +5,41 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.*;
 import java.util.*;
 
-
-public class HelloWorld extends HttpServlet {
-
+/**
+ *	Home controller
+ * 
+ * 	@author nicolatassini
+ */
+public class JVMPropertiesCtrl extends HttpServlet {
+	
+	private final String TITLE = "Heroku on Java: JVM properties";
+	
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-		String title = "Heroku on Java: JVM properties";
-		resp.getWriter().print("<html>");
-		resp.getWriter().print("<head>");
+    	//Init body
+		String h = "<html><head>"
+			+ getMeta()
+			+ "<title>" + TITLE + "</title><body>"
+			+ getStyle()
+			+ "</head>"
+			+ "<body>"
+			+ "<h1>" + TITLE + "</h1>"
+			+ "<h4><a class=\"linkme\" href=\"http://about.me/nicola.tassini\">Contact Me</a></h4>" 
+			+ "<br/>";
 		
-		resp.getWriter().print(getMeta());
-		
-		resp.getWriter().print("<title>"+title+"</title><body>");
-		resp.getWriter().print("<style type=\"text/css\">"
-			+"body { color: #FF6C00; }"
-			+"#tquilalink { position: absolute; top: 10px; right: 10px; }"
-			+"#linkme { color: #FF6C00; }"
-			+"</style>");
-		resp.getWriter().print("</head>");
-		resp.getWriter().print("<body>");
-		
-        resp.getWriter().print("<h1>"+title+"</h1>");
-        resp.getWriter().print("<h4><a class=\"linkme\" href=\"http://about.me/nicola.tassini\">Contact me!</a></h4>");
-		
-		resp.getWriter().print("<br/><table>");
+		//Print properties
+		h += "<table>";
 		Properties properties = System.getProperties();
 		for(String parameterName : Collections.list((Enumeration<String>)properties.propertyNames())) {
-			resp.getWriter().print("<tr><td>"+parameterName+"</td><td>"+properties.getProperty(parameterName)+"</td></tr>");
+			h += "<tr><td>"+parameterName+"</td><td>"+properties.getProperty(parameterName)+"</td></tr>");
 		}
-		resp.getWriter().print("</table>");
-		resp.getWriter().print("</body>");
-		resp.getWriter().print("</html>");
+		h += "</table>";
 		
-        resp.getWriter().print("");
+		h += "</body></html>";
+		
+		//Render
+        resp.getWriter().print(h);
     }
 
     public static void main(String[] args) throws Exception{
@@ -50,7 +51,7 @@ public class HelloWorld extends HttpServlet {
         server.start();
         server.join();   
     }
-
+    
 	private String getMeta() {
 		return "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8;\" />"
 		+"<meta http-equiv=\"Cache Control\" content=\"no-cache\"/>"
@@ -59,5 +60,13 @@ public class HelloWorld extends HttpServlet {
 		+"<meta name=\"keywords\" content=\"heroku, java, system, properties, jvm, version, paas\"/>"
 		+"<meta name=\"description\" content=\"Display all the system properties of Java JVM on Heroku platform\"/>"
 		+"<meta name=\"ROBOTS\" content=\"all\"/>";
+	}
+	
+	private String getStyle() {
+		return "<style type=\"text/css\">"
+			+"body { color: #FF6C00; }"
+			+"#tquilalink { position: absolute; top: 10px; right: 10px; }"
+			+"#linkme { color: #FF6C00; }"
+			+"</style>";
 	}
 }

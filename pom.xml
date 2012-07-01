@@ -33,7 +33,7 @@
                             <generateRepository>false</generateRepository>
                             <programs>
                                 <program>
-                                    <mainClass>HelloWorld</mainClass>
+                                    <mainClass>JVMPropertiesCtrl</mainClass>
                                     <name>webapp</name>
                                 </program>
                             </programs>
