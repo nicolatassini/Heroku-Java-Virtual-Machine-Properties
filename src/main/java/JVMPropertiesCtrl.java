@@ -32,7 +32,7 @@ public class JVMPropertiesCtrl extends HttpServlet {
 		h += "<table>";
 		Properties properties = System.getProperties();
 		for(String parameterName : Collections.list((Enumeration<String>)properties.propertyNames())) {
-			h += "<tr><td>"+parameterName+"</td><td>"+properties.getProperty(parameterName)+"</td></tr>");
+			h += "<tr><td>"+parameterName+"</td><td>"+properties.getProperty(parameterName)+"</td></tr>";
 		}
 		h += "</table>";
 		
