@@ -6,7 +6,6 @@ import org.eclipse.jetty.servlet.*;
 import java.util.*;
 
 
-
 public class HelloWorld extends HttpServlet {
 
     @Override
@@ -28,9 +27,7 @@ public class HelloWorld extends HttpServlet {
 		resp.getWriter().print("<body>");
 		
         resp.getWriter().print("<h1>"+title+"</h1>");
-		resp.getWriter().print("<h4><a class=\"linkme\" href=\"mailto:nicola@tquila.com\">Write us for any comment or request!</a></h4>");
-		
-		resp.getWriter().print("<a id=\"tquilalink\" href=\"http://www.tquila.com\" target=\"_blank\"><img id=\"tquilaimg\" src=\"http://www.tquila.com/tquila-logo.png\"/></a>");
+        resp.getWriter().print("<h4><a class=\"linkme\" href=\"http://about.me/nicola.tassini\">Contact me!</a></h4>");
 		
 		resp.getWriter().print("<br/><table>");
 		Properties properties = System.getProperties();
